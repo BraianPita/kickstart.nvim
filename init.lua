@@ -1,4 +1,4 @@
---[[
+--[[init
 
 =====================================================================
 ==================== READ THIS BEFORE CONTINUING ====================
@@ -848,7 +848,11 @@ require('lazy').setup({
     'ellisonleao/gruvbox.nvim',
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
+    transparent_mode = true,
     config = function()
+      require('gruvbox').setup {
+        transparent_mode = true,
+      }
       -- Load the colorscheme here
       vim.cmd.colorscheme 'gruvbox'
       vim.o.background = 'dark'
